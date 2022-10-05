@@ -1,0 +1,18 @@
+type Chapter {
+    id: ID!
+    name: String!
+    course: Course!
+}
+
+input NewChapterInput {
+    name: String!
+    courseID: ID!
+}
+
+extend type Query {
+    chapters: [Chapter]
+}
+
+extend type Mutation {
+    createChapter(input: NewChapterInput!): Chapter
+}
